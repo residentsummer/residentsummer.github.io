@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Documents/resume.clj.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="clojure">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="xombat">
+<link rel="stylesheet" href="http://code.cdn.mozilla.net/fonts/fira.css">
+<style type="text/css">
+<!--
+pre { font-family: Fira Mono; color: #f6f3e8; background-color: #242424; }
+body { font-family: Fira Mono; color: #f6f3e8; background-color: #242424; }
+* { font-size: 12px; }
+.level10c { color: #43cd80; }
+.level11c { color: #9a32cd; }
+.level12c { color: #cd2626; }
+.level13c { color: #3a5fcd; }
+.level14c { color: #43cd80; }
+.level15c { color: #9a32cd; }
+.level16c { color: #cd2626; }
+.Keyword { color: #8ac6f2; }
+.Number { color: #e5786d; }
+.PreProc { color: #e5786d; }
+.Special { color: #e7f6da; }
+.String { color: #95e454; font-style: italic; }
+.Comment { color: #99968b; font-style: italic; }
+.Constant { color: #e5786d; }
+.Function { color: #cae682; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<div><div style="margin: 2em auto; width: 50em;">
+<pre id='vimCodeElement'>
+<span class="level16c">(</span><span class="PreProc">ns</span> my.resume
+  <span class="level15c">(</span><span class="Keyword">:require</span>
+    <span class="level14c">[</span>clj-time.core <span class="Keyword">:as</span> t<span class="level14c">]</span>
+    <span class="level14c">[</span>my.util <span class="Keyword">:refer</span>
+     <span class="level13c">[</span>time-range
+      locations<span class="level13c">]</span><span class="level14c">]</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> contact-info
+  <span class="level15c">{</span><span class="Keyword">:first-name</span> <span class="String">&quot;Anton&quot;</span> <span class="Keyword">:last-name</span> <span class="String">&quot;Shkalev&quot;</span>
+   <span class="Keyword">:birtdate</span> <span class="level14c">(</span>t/date-time <span class="Number">1989</span> <span class="Number">3</span> <span class="Number">9</span><span class="level14c">)</span>
+   <span class="Keyword">:email</span> <span class="String">&quot;anton.shkalev+job@gmail.com&quot;</span>
+   <span class="Keyword">:phone-number</span> <span class="String">&quot;+7-926-106-1620&quot;</span>
+   <span class="Keyword">:location</span> <span class="level14c">(</span>locations <span class="Keyword">:Moscow</span><span class="level14c">)</span><span class="level15c">}</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> experience
+  <span class="level15c">[</span><span class="level14c">{</span><span class="Keyword">:job-title</span> <span class="String">&quot;CTO, co-founder&quot;</span> <span class="Keyword">:company-name</span> <span class="String">&quot;GetShopApp&quot;</span>
+    <span class="Keyword">:time-range</span> <span class="level13c">(</span>time-range <span class="level12c">[</span><span class="Number">2013</span> <span class="Number">4</span><span class="level12c">]</span> <span class="Constant">nil</span><span class="level13c">)</span>
+    <span class="Keyword">:projects</span>
+    <span class="level13c">[</span><span class="level12c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Getshopapp.com - m-commerce platform&quot;</span>
+      <span class="Keyword">:roles</span> <span class="level11c">[</span><span class="String">&quot;System architect&quot;</span> <span class="String">&quot;Senior back-end engineer&quot;</span> <span class="String">&quot;DBA&quot;</span> <span class="String">&quot;DevOps engineer&quot;</span><span class="level11c">]</span>
+      <span class="Keyword">:description</span> <span class="String">&quot;We were creating an m-commerce platform for existing e-shops. \</span>
+<span class="String">                    Our main goal was to provide exceptional shopping experience \</span>
+<span class="String">                    for mobile visitors of the online shop. We created native \</span>
+<span class="String">                    apps and mobile-friendly versions of the desktop sites with \</span>
+<span class="String">                    deep integration to shop's existing e-commerce platforms.&quot;</span>
+      <span class="Keyword">:responsibilities</span>
+      <span class="level11c">[</span><span class="String">&quot;Designing robust and scalable back-end architecture&quot;</span>
+       <span class="String">&quot;Creating a JSON API for apps, admin panel, external integration modules&quot;</span>
+       <span class="String">&quot;Creating an automated app publishing system for Google Play and AppStore&quot;</span>
+       <span class="String">&quot;Working with contractors (developers of integration modules)&quot;</span>
+       <span class="String">&quot;Working with a team of designers on front-ends sketches&quot;</span>
+       <span class="String">&quot;Hiring developers (incl. Skype and on-site interviews)&quot;</span>
+       <span class="String">&quot;Maintaining company servers and rolling out updates&quot;</span><span class="level11c">]</span><span class="level12c">}</span><span class="level13c">]</span><span class="level14c">}</span>
+
+   <span class="level14c">{</span><span class="Keyword">:job-title</span> <span class="String">&quot;Software engineer&quot;</span> <span class="Keyword">:company-name</span> <span class="String">&quot;Intel Russia&quot;</span>
+    <span class="Keyword">:time-range</span> <span class="level13c">(</span>time-range <span class="level12c">[</span><span class="Number">2008</span> <span class="Number">8</span><span class="level12c">]</span> <span class="level12c">[</span><span class="Number">2013</span> <span class="Number">4</span><span class="level12c">]</span><span class="level13c">)</span>
+    <span class="Keyword">:projects</span>
+    <span class="level13c">[</span><span class="level12c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Research and evaluation of a new CPU architecture&quot;</span>
+      <span class="Keyword">:roles</span> <span class="level11c">[</span><span class="String">&quot;Component owner&quot;</span> <span class="String">&quot;Developer&quot;</span> <span class="String">&quot;Analyst&quot;</span><span class="level11c">]</span>
+      <span class="Keyword">:description</span> <span class="String">&quot;NDA&quot;</span>
+      <span class="Keyword">:responsibilities</span>
+      <span class="level11c">[</span><span class="String">&quot;Developing and maintaining components of a CPU performance simulator&quot;</span>
+       <span class="String">&quot;Implementing and evaluating new optimisation techniques&quot;</span>
+       <span class="String">&quot;Fixing bugs&quot;</span> <span class="String">&quot;Refactoring&quot;</span><span class="level11c">]</span>
+      <span class="Keyword">:awards</span>
+      <span class="level11c">[</span><span class="level10c">{</span><span class="Keyword">:title</span> <span class="String">&quot;For timely delivery of high quality report to &lt;project-name&gt; \</span>
+<span class="String">                reviewers&quot;</span>
+        <span class="Keyword">:level</span> <span class="Keyword">:cross-business-group</span> <span class="Keyword">:scope</span> <span class="Keyword">:personal</span><span class="level10c">}</span>
+       <span class="level10c">{</span><span class="Keyword">:title</span> <span class="String">&quot;For highly performant work, leading to achieving key result \</span>
+<span class="String">                ahead of schedule&quot;</span>
+        <span class="Keyword">:level</span> <span class="Keyword">:department</span> <span class="Keyword">:scope</span> <span class="Keyword">:team</span><span class="level10c">}</span>
+       <span class="level10c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Teamwork Award level 2&quot;</span> <span class="Keyword">:level</span> <span class="Keyword">:co-worker</span> <span class="Keyword">:scope</span> <span class="Keyword">:personal</span><span class="level10c">}</span><span class="level11c">]</span><span class="level12c">}</span>
+
+     <span class="level12c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Compiler for Itanium architecture&quot;</span>
+      <span class="Keyword">:roles</span> <span class="level11c">[</span><span class="String">&quot;Component owner&quot;</span> <span class="String">&quot;Developer&quot;</span><span class="level11c">]</span>
+      <span class="Keyword">:description</span> <span class="String">&quot;Maintenance of codegen of Intel Compiler for Itanium&quot;</span>
+      <span class="Keyword">:responsibilities</span> <span class="level11c">[</span><span class="String">&quot;Maintaining a component of a huge SW project&quot;</span><span class="level11c">]</span>
+      <span class="Keyword">:awards</span>
+      <span class="level11c">[</span><span class="level10c">{</span><span class="Keyword">:title</span> <span class="String">&quot;For surpassing initial expectation of maintaining bugs backlog \</span>
+<span class="String">                at current level by bringing it down to zero&quot;</span>
+        <span class="Keyword">:level</span> <span class="Keyword">:department</span> <span class="Keyword">:scope</span> <span class="Keyword">:team</span><span class="level10c">}</span><span class="level11c">]</span><span class="level12c">}</span><span class="level13c">]</span><span class="level14c">}</span><span class="level15c">]</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> expertise
+  <span class="level15c">{</span><span class="Keyword">:back-end</span>
+   <span class="level14c">{</span><span class="Keyword">:description</span> <span class="String">&quot;Developing back-ends for challeging projects is a pleasure \</span>
+<span class="String">                  for me. I love Clojure for it's elegance and flexibility. I \</span>
+<span class="String">                  also use Python for scripting and small subprojects. I know \</span>
+<span class="String">                  SQL (My- and Postgre-) and prefer it (with a touch of query \</span>
+<span class="String">                  generators, like korma) to ORMs. Mostly writing HTTP APIs - \</span>
+<span class="String">                  so I know this protocol to a great extent.&quot;</span>
+    <span class="Keyword">:buzzwords</span> <span class="Special">#</span><span class="level13c">{</span><span class="Keyword">:rest</span> <span class="Keyword">:crud</span> <span class="Keyword">:json</span> <span class="Keyword">:http</span> <span class="Keyword">:api</span><span class="level13c">}</span><span class="level14c">}</span>
+
+
+   <span class="Keyword">:system-design</span>
+   <span class="level14c">{</span><span class="Keyword">:description</span> <span class="String">&quot;I have experience in design of both monolithic and service-based \</span>
+<span class="String">                  systems, leaning towards later. Aware of pros and cons of \</span>
+<span class="String">                  stateful/stateless services. Know core principles of high-load \</span>
+<span class="String">                  projects design. Believe in traditinal SQL datastores. \</span>
+<span class="String">                  For Getshopapp I made a clustered SOA back-end with configurable \</span>
+<span class="String">                  run-time distribution of roles and fault-tolerance (was standing \</span>
+<span class="String">                  on the shoulders of giants, though).&quot;</span>
+    <span class="Keyword">:buzzwords</span> <span class="Special">#</span><span class="level13c">{</span><span class="Keyword">:microservices</span> <span class="Keyword">:cloud</span> <span class="Keyword">:soa</span> <span class="Keyword">:ha</span> <span class="Keyword">:cap-theorem</span> <span class="Keyword">:load-balancing</span><span class="level13c">}</span><span class="level14c">}</span>
+   <span class="Keyword">:dev-ops</span>
+   <span class="level14c">{</span><span class="Keyword">:description</span> <span class="String">&quot;I can maintain a small/medium fleet of servers on AWS. \</span>
+<span class="String">                  A big fan of Linux and it's philosophy (should I call it \</span>
+<span class="String">                  'The Unix Way'?). I use Arch and FreeBSD at home, but can work \</span>
+<span class="String">                  with Debian and Ubuntu as well. \</span>
+<span class="String">                  Getting in touch with CoreOS and familiar with Docker, wrote \</span>
+<span class="String">                  a simple utility in Python (nothing special) to cover the rough \</span>
+<span class="String">                  edges of not yet mature technology. Very excited about it, though.&quot;</span>
+    <span class="Keyword">:buzzwords</span> <span class="Special">#</span><span class="level13c">{</span><span class="Keyword">:aws</span> <span class="Keyword">:cloud</span> <span class="Keyword">:ci</span> <span class="Keyword">:docker</span> <span class="Keyword">:linux</span><span class="level13c">}</span><span class="level14c">}</span>
+   <span class="Keyword">:dba</span>
+   <span class="level14c">{</span><span class="Keyword">:description</span> <span class="String">&quot;I have some experience in creation of DB schemas. Extensively \</span>
+<span class="String">                  use foreign keys and constraints. Know how to analyze query \</span>
+<span class="String">                  performance, about the importance of indices (and the correct \</span>
+<span class="String">                  order of columns in it), about sharding and hierarchical tables, \</span>
+<span class="String">                  normalization and denormalization.&quot;</span><span class="level14c">}</span>
+   <span class="Keyword">:ios-development</span>
+   <span class="level14c">{</span><span class="Keyword">:description</span> <span class="String">&quot;Have some experience in iOS development as well. I know ObjC at \</span>
+<span class="String">                  a reasonable level, know how to distribute tasks between threads \</span>
+<span class="String">                  and queues, how to use ARC and /not/ leak memory with blocks. \</span>
+<span class="String">                  Not so good at UI tasks, though.&quot;</span><span class="level14c">}</span><span class="level15c">}</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> skills
+  <span class="String">&quot;A short list of *some* relevant skills I have, ordered by experience level&quot;</span>
+  <span class="level15c">{</span><span class="Keyword">:languages</span> <span class="level14c">[</span><span class="Keyword">:clojure</span> <span class="Keyword">:python</span> <span class="Keyword">:bash</span> <span class="Keyword">:objective-c</span> <span class="Keyword">:c</span> <span class="Keyword">:c++</span> <span class="Keyword">:javascript</span><span class="level14c">]</span>
+   <span class="Keyword">:platforms</span> <span class="level14c">[</span><span class="Keyword">:linux</span> <span class="Keyword">:aws</span> <span class="Keyword">:jboss</span> <span class="Keyword">:docker</span> <span class="Keyword">:core-os</span><span class="level14c">]</span>
+   <span class="Keyword">:databases</span> <span class="level14c">[</span><span class="Keyword">:mysql</span> <span class="Keyword">:postgresql</span><span class="level14c">]</span>
+   <span class="Keyword">:tools</span> <span class="level14c">[</span><span class="Keyword">:git</span> <span class="Keyword">:vim</span> <span class="Keyword">:xcode</span> <span class="Keyword">:mercurial</span> <span class="Keyword">:svn</span><span class="level14c">]</span>
+   <span class="Keyword">:org</span> <span class="level14c">[</span><span class="Keyword">:jira</span> <span class="Keyword">:redmine</span> <span class="Keyword">:bugzilla</span> <span class="Keyword">:agile</span><span class="level14c">]</span><span class="level15c">}</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> education
+  <span class="level15c">[</span><span class="level14c">{</span><span class="Keyword">:type</span> <span class="Keyword">:higher</span>
+    <span class="Keyword">:institution</span> <span class="level13c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Lomonosov Moscow State University&quot;</span>
+                  <span class="Keyword">:location</span> <span class="level12c">(</span>locations <span class="Keyword">:Moscow</span><span class="level12c">)</span>
+                  <span class="Keyword">:type</span> <span class="Keyword">:university</span><span class="level13c">}</span>
+    <span class="Keyword">:time-range</span> <span class="level13c">(</span>time-range <span class="level12c">[</span><span class="Number">2006</span> <span class="Number">9</span><span class="level12c">]</span> <span class="level12c">[</span><span class="Number">2011</span> <span class="Number">6</span><span class="level12c">]</span><span class="level13c">)</span>
+    <span class="Keyword">:field</span> <span class="String">&quot;Applied Mathematics and Computer Science&quot;</span>
+    <span class="Keyword">:degree</span> <span class="Keyword">:master</span><span class="level14c">}</span>
+   <span class="level14c">{</span><span class="Keyword">:type</span> <span class="Keyword">:secondary</span>
+    <span class="Keyword">:institution</span> <span class="level13c">{</span><span class="Keyword">:title</span> <span class="String">&quot;Advanced Education and Science Center, MSU&quot;</span>
+                  <span class="Keyword">:location</span> <span class="level12c">(</span>locations <span class="Keyword">:Moscow</span><span class="level12c">)</span>
+                  <span class="Keyword">:type</span> <span class="Keyword">:school</span><span class="level13c">}</span>
+    <span class="Keyword">:field</span> <span class="String">&quot;Computer Science&quot;</span><span class="level14c">}</span><span class="level15c">]</span><span class="level16c">)</span>
+
+<span class="Comment">;;; cut here ;;;</span>
+
+<span class="level16c">(</span><span class="PreProc">ns</span> my.util
+  <span class="level15c">(</span><span class="Keyword">:require</span> <span class="level14c">[</span>clj-time.core <span class="Keyword">:as</span> t<span class="level14c">]</span><span class="level15c">)</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="Special">def</span> locations
+  <span class="String">&quot;A map of locations, used in this document. With ISO-3166-2 codes.&quot;</span>
+  <span class="level15c">{</span><span class="Keyword">:Moscow</span> <span class="level14c">{</span><span class="Keyword">:subdivision-name</span> <span class="String">&quot;Moskva&quot;</span>
+            <span class="Keyword">:subdivision-category</span> <span class="Keyword">:autonomous-city</span>
+            <span class="Keyword">:code</span> <span class="String">&quot;RU-MOW&quot;</span><span class="level14c">}</span><span class="level15c">}</span><span class="level16c">)</span>
+
+<span class="level16c">(</span><span class="PreProc">defn</span> time-range
+  <span class="String">&quot;Creates a vector of two Joda DateTime objects, representing a time range&quot;</span>
+  <span class="level15c">(</span><span class="level14c">[</span>start<span class="level14c">]</span>
+   <span class="level14c">(</span>time-range start <span class="Constant">nil</span><span class="level14c">)</span><span class="level15c">)</span>
+  <span class="level15c">(</span><span class="level14c">[</span>start end<span class="level14c">]</span>
+   <span class="level14c">{</span><span class="Keyword">:pre</span> <span class="level13c">[</span><span class="level12c">(</span><span class="Function">not-empty</span> start<span class="level12c">)</span><span class="level13c">]</span><span class="level14c">}</span>
+   <span class="level14c">(</span><span class="Function">mapv</span> <span class="Special">#</span><span class="level13c">(</span><span class="PreProc">or</span> <span class="level12c">(</span><span class="PreProc">some-&gt;&gt;</span> <span class="level11c">(</span><span class="Function">not-empty</span> <span class="Special">%</span><span class="level11c">)</span>
+                       <span class="level11c">(</span><span class="Function">apply</span> t/date-time<span class="level11c">)</span><span class="level12c">)</span>
+              <span class="level12c">(</span>t/now<span class="level12c">)</span><span class="level13c">)</span>
+         <span class="level13c">[</span>start end<span class="level13c">]</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+</pre>
+</div></div>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
