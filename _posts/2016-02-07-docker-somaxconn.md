@@ -4,7 +4,7 @@ title: "Adjusting privileged network options for docker containers"
 categories: docker
 ---
 
-*&lt;docker have changed the devops landscape, blah-blah-blah...&gt;*
+*&lt;docker has changed the devops landscape, blah-blah-blah...&gt;*
 
 Now, let's get to the practical aspects of running containers in production.
 
