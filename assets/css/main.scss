@@ -759,3 +759,15 @@ tbody tr:nth-child(odd) th {
   background-color: $base-05;
 }
 
+/* -----------------------------------
+
+  "Read more" links will jump higher than cut anchor
+
+----------------------------------- */
+.cut::before {
+  content: "";
+  display: block;
+  height: 5em; /* fixed header height*/
+  margin: -5em 0 0; /* negative fixed header height */
+}
+

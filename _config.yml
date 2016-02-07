@@ -1,6 +1,8 @@
 # Site live URL
 url: "https://residentsummer.github.io"
 baseurl:
+# Oh, separators doesn't work through the includes
+excerpt_separator: '{% include cut.html %}'
 
 # Harmony theme configuration.
 harmony:
