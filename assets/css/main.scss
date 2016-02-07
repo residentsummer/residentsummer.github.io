@@ -279,7 +279,7 @@ footer.main-footer {
     }
   }
 
-  p.disclaimer {
+  p.disclaimer, .column-full {
     text-align: center;
   }
 
@@ -510,11 +510,11 @@ body.theme-base-01 {
 
 header.main-header {
   padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+  @include MQ(M) { padding: 1em 0; }
 }
 footer.main-footer {
   padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+  @include MQ(M) { padding: 1em 0; }
 }
 .page-content {
   padding: 1em 0;
