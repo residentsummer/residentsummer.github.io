@@ -395,7 +395,7 @@ div.page-content {
     }
     @include MQ(M){
       li {
-        @include font-size(16px);
+        @include font-size(18px);
         line-height: 1.5;
         background-position: 0 7px;
       }
@@ -415,7 +415,7 @@ div.page-content {
       position:relative;
     }
     @include MQ(M){
-      @include font-size(16px);
+      @include font-size(18px);
       li {
         line-height: 1.5;
         background-position: 0 7px;
@@ -497,6 +497,7 @@ body.theme-base-01 {
 
   div.page-content {
     h1, h2, h3, h4, h5, h6 { color: $base-01; }
+    p, li { text-align: justify; }
   }
 
 
