@@ -294,7 +294,7 @@ footer.main-footer {
     height: 32px;
     background: $base-07;
     background-image: url("./images/socials-icons.svg");
-    background-size: 224px 64px;
+    background-size: 256px 64px;
     border-radius: 0.25em;
     @include transition(background-color 0.2s);
     border-bottom-color: transparent;
@@ -340,12 +340,20 @@ footer.main-footer {
   }
 
   li a.pinterest {
-      background-position: -196px 0;
-      &:hover {
-        background-position: -196px -32px;
-      }
+    background-position: -192px 0;
+    &:hover {
+      background-position: -192px -32px;
     }
   }
+
+  li a.linkedin {
+    background-position: -224px 0;
+    &:hover {
+      background-position: -224px -32px;
+    }
+  }
+
+ }
 }
 
 .no-svg footer.main-footer ul.social-media li a {
@@ -353,7 +361,7 @@ footer.main-footer {
     height: 32px;
     background-color: $base-07;
     background-image: url("./images/socials-icons.png");
-    background-size: 224px 64px;
+    background-size: 256px 64px;
     border-radius: 0.25em;
     @include transition(background-color 0.2s);
     border-bottom-color: transparent;
@@ -750,3 +758,4 @@ tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: $base-05;
 }
+
