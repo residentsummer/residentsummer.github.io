@@ -1,0 +1,57 @@
+# Site live URL
+url: "https://residentsummer.github.io"
+baseurl:
+# Oh, separators doesn't work through the includes
+excerpt_separator: '{% include cut.html %}'
+
+# Harmony theme configuration.
+harmony:
+  name: "Insane software adventures"
+  description: residentsummer's blog
+  meta_description: residentsummer's blog
+  basetheme: theme-base-01
+  # Theme author details
+  author:
+    name: Gayan Virajith
+    email: gayanvirajith@gmail.com
+    url: http://gayanvirajith.github.io
+
+  # Google Analytics key, leave blank to ignore
+  # google_analytics_key: UA-xxxx-x
+
+  # Profile links, leave blank to ignore
+  social:
+    github: residentsummer
+    linkedin: shkalev
+    twitter:
+    facebook:
+    gplus:
+    dribble:
+    pinterest:
+
+  # Toggle disclaimer in footer
+  show_disclaimer: true
+
+# Conversion / Build settings
+permalink: pretty
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  enable_coderay: false
+sass:
+  sass_dir: assets/css/_sass
+  style: :compressed
+gems:
+  - jekyll-redirect-from
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Rakefile
+  - README.md
+  - theme-licence.md
+  - Gemfile.lock
+

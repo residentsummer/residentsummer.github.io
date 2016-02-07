@@ -1,0 +1,27 @@
+** How to create a pdf from WYS in Vim **
+
+1. :TOhtml
+2. Add font css to html file
+
+    <link rel="stylesheet" href="http://code.cdn.mozilla.net/fonts/fira.css">
+
+    pre { font-family: Fira Mono; color: #f6f3e8; background-color: #242424; }
+    body { font-family: Fira Mono; color: #f6f3e8; background-color: #242424; }
+    * { font-size: 12px; }
+
+3. wkhtmltopdf -s A4 -T 10 -B 10 -L 35 /mnt/resume.clj.{html,pdf}
+4. qpdf --stream-data=uncompress /mnt/resume.clj.pdf /mnt/out.pdf
+5. vim -b out.pdf
+6. Fill the whole page with background color
+
+    0.141176470 0.141176470 0.141176470 scn
+    0 0 m 595 0 l 595 842 l 0 842 l f
+
+** How to create an HTML from WYS in Vim **
+
+1. :TOhtml
+2. Add font css to html file
+3. Wrap body's content in a divs (don't know how to detect width...):
+
+    <div><div style="margin: 2em auto; width: 50em;">...</div></div>
+
