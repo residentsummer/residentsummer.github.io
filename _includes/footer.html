@@ -1,7 +1,22 @@
-{% if site.harmony.show_disclaimer %}
-  <p class="disclaimer">
-    <a href="https://github.com/gayanvirajith/harmony" target="_blank">Theme</a> by Gayan Virajith.
-    Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
-  </p>
-{% endif %}
+<footer class="main-footer">
+    <div class="wc-container column-full">
+        <h2>{{ site.harmony.description }}</h2></br>
+    </div>
+    <div class="wc-container">
+        <div class="column one">
+            {% include footer-links.html %}
+        </div>
+        <div class="column two">
+            {% include social.html %}
+        </div>
+    </div>
+    <div class="wc-container">
+        {% if site.harmony.show_disclaimer %}
+          <p class="disclaimer">
+            <a href="https://github.com/gayanvirajith/harmony" target="_blank">Theme</a> by Gayan Virajith.
+            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
+          </p>
+        {% endif %}
+    </div>
+</footer>
 

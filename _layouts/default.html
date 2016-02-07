@@ -24,29 +24,9 @@
         <![endif]-->
     </head>
     <body class="{{ site.harmony.basetheme }}">
-        <header class="main-header">
-            <div class="wc-container">
-                <h1><a href="{{ site.baseurl }}/">{{ site.harmony.name }}</a></h1>
-                {% include header-links.html %}
-            </div>
-        </header>
+        {% include header.html %}
         {{ content }}
-        <footer class="main-footer">
-            <div class="wc-container column-full">
-                <h2>{{ site.harmony.description }}</h2></br>
-            </div>
-            <div class="wc-container">
-                <div class="column one">
-                    {% include footer-links.html %}
-                </div>
-                <div class="column two">
-                    {% include social.html %}
-                </div>
-            </div>
-            <div class="wc-container">
-                {% include footer.html %}
-            </div>
-        </footer>
+        {% include footer.html %}
         <script type="text/javascript">
           var loadFont = function(faceName) {
             var l = document.createElement('link');
