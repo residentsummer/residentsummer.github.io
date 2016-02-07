@@ -3,6 +3,8 @@ url: "https://residentsummer.github.io"
 baseurl:
 # Oh, separators doesn't work through the includes
 excerpt_separator: '{% include cut.html %}'
+# No categories, no confilicts with static pages
+permalink: /posts/:year/:month/:day/:slug/
 
 # Harmony theme configuration.
 harmony:
@@ -33,7 +35,6 @@ harmony:
   show_disclaimer: true
 
 # Conversion / Build settings
-permalink: pretty
 highlighter: rouge
 markdown: kramdown
 kramdown:
