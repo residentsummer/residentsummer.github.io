@@ -1,14 +1,17 @@
+title: "Insane software adventures"
+description: residentsummer's blog
+meta_description:
+
 # Site live URL
 url: "https://residentsummer.github.io"
 baseurl:
+# No categories, no confilicts with static pages
+permalink: /posts/:year/:month/:day/:slug/
 # Oh, separators doesn't work through the includes
 excerpt_separator: '{% include cut.html %}'
 
 # Harmony theme configuration.
 harmony:
-  name: "Insane software adventures"
-  description: residentsummer's blog
-  meta_description: residentsummer's blog
   basetheme: theme-base-01
   # Theme author details
   author:
@@ -23,6 +26,7 @@ harmony:
   social:
     github: residentsummer
     linkedin: shkalev
+    feed: /feed.xml
     twitter:
     facebook:
     gplus:
@@ -33,7 +37,6 @@ harmony:
   show_disclaimer: true
 
 # Conversion / Build settings
-permalink: pretty
 highlighter: rouge
 markdown: kramdown
 kramdown:
