@@ -31,7 +31,7 @@
     <li>
         <a title="{{ site.harmony.social.gplus }} on Google Plus"
             href="https://plus.google.com/{{ site.harmony.social.gplus }}"
-            class="google wc-img-replace" target="_blank">Google</a>
+            class="gplus wc-img-replace" target="_blank">Google</a>
     </li>
     {% endif %}
 
@@ -40,6 +40,14 @@
         <a title="{{ site.harmony.social.dribble }} on Dribble"
             href="https://dribbble.com/{{ site.harmony.social.dribble }}"
             class="dribble wc-img-replace" target="_blank">Dribble</a>
+    </li>
+    {% endif %}
+
+    {% if site.harmony.social.feed %}
+    <li>
+        <a title="{{ site.title }} via RSS"
+            href="{{ site.harmony.social.feed | prepend: site.baseurl }}"
+            class="feed wc-img-replace" target="_blank">RSS</a>
     </li>
     {% endif %}
 
