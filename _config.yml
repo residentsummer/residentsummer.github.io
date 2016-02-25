@@ -19,6 +19,8 @@ harmony:
     email: gayanvirajith@gmail.com
     url: http://gayanvirajith.github.io
 
+  # Verification key for webmaster tools
+  google_site_verification: rQm9blgt23jZmJ9y0y0FKOGhTGVO-mB2eMPYJatbVas
   # Google Analytics key, leave blank to ignore
   # google_analytics_key: UA-xxxx-x
 

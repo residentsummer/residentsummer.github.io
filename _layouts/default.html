@@ -6,8 +6,12 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.meta_description }}{% endif %}">
-        <link rel="canonical"
-        href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+
+        {% if site.harmony.google_site_verification %}
+        <!-- Verification token for Google Search Console -->
+        <meta name="google-site-verification" content="{{ site.harmony.google_site_verification }}"/>
+        {% endif %}
 
         <!-- Harmony styles -->
         <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
