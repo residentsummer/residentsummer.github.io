@@ -1,0 +1,7 @@
+---
+layout: null
+sitemap: false
+---
+
+Sitemap: {{ '/sitemap.xml' | prepend: site.baseurl | prepend: site.url }}
+
