@@ -5,3 +5,6 @@ sitemap: false
 
 Sitemap: {{ '/sitemap.xml' | prepend: site.baseurl | prepend: site.url }}
 
+User-agent: *
+Disallow: /about
+
