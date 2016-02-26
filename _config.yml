@@ -1,6 +1,8 @@
 title: "Insane software adventures"
 description: residentsummer's blog
 meta_description:
+author:
+  name: residentsummer
 
 # Site live URL
 url: "https://residentsummer.github.io"
