@@ -51,7 +51,7 @@ kramdown:
 sass:
   sass_dir: assets/css/_sass
   style: :compressed
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-feed
