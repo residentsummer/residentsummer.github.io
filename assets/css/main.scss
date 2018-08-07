@@ -600,6 +600,15 @@ pre {
   }
 }
 
+div.highlight pre {
+  overflow-x: hidden;
+  white-space: pre;
+}
+
+div.highlight:hover pre {
+  white-space: pre-wrap;
+}
+
 /* Gist via GitHub Pages */
 .gist .gist-file {
   font-family: Menlo, Monaco, "Courier New", monospace !important;
