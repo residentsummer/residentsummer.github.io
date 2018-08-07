@@ -61,6 +61,6 @@ exclude:
   - Gemfile
   - Rakefile
   - README.md
-  - theme-licence.md
+  - theme-license.md
   - Gemfile.lock
-
+  - vendor
