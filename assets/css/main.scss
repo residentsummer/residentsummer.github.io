@@ -38,11 +38,11 @@ body {
     family: $fallback-primary-fonts; // variables inside partials > _variables.scss
   }
 }
-.wf-signikanegative-n4-active > body {
-  font-family: $primary-font;
+.fonts-loaded body {
+    font-family: $primary-font, $fallback-primary-fonts;
 }
-.no-js > body {
-    font-family: $primary-font;
+.no-js body {
+    font-family: $primary-font, $fallback-primary-fonts;
 }
 
 .wc-container {
@@ -567,11 +567,11 @@ Code snippets
 code, pre {
   font-family: $fallback-code-fonts;
 }
-.wf-firamono-n4-active > code, .wf-firamono-n4-active > pre {
-    font-family: $code-font;
+.fonts-loaded code, .fonts-loaded pre {
+    font-family: $code-font, $fallback-code-fonts;
 }
-.no-js > code, .no-js > pre {
-    font-family: $code-font;
+.no-js code, .no-js pre {
+    font-family: $code-font, $fallback-code-fonts;
 }
 
 code {
