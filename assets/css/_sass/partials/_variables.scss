@@ -25,6 +25,7 @@ $base-0E: #b6b3eb;
 $base-0F: #bc9458;
 
 // Fonts
-$primary-font: "Signika Negative", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$code-font: "Fira Mono", Menlo, Monaco, "Courier New", monospace;
-
+$primary-font: "Signika Negative";
+$fallback-primary-fonts: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-font: "Fira Mono";
+$fallback-code-fonts: Menlo, Monaco, "Courier New", monospace;

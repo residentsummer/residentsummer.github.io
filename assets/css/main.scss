@@ -35,8 +35,14 @@ html * {
 body {
   font: {
     size: 100%;
-    family: $primary-font; // variables inside partials > _variables.scss
+    family: $fallback-primary-fonts; // variables inside partials > _variables.scss
   }
+}
+.wf-signikanegative-n4-active > body {
+  font-family: $primary-font;
+}
+.no-js > body {
+    font-family: $primary-font;
 }
 
 .wc-container {
@@ -559,8 +565,15 @@ Code snippets
 
 --------------------------------- */
 code, pre {
-  font-family: $code-font;
+  font-family: $fallback-code-fonts;
 }
+.wf-firamono-n4-active > code, .wf-firamono-n4-active > pre {
+    font-family: $code-font;
+}
+.no-js > code, .no-js > pre {
+    font-family: $code-font;
+}
+
 code {
   padding: .25em .5em;
   font-size: 85%;
@@ -789,4 +802,3 @@ tbody tr:nth-child(odd) th {
   height: 5em; /* fixed header height*/
   margin: -5em 0 0; /* negative fixed header height */
 }
-
