@@ -48,7 +48,7 @@ kube-proxy-x7qgq                        1/1       Running   0          7m
 
 Now let's fire up kube-proxy logs and see how this went:
 
-```
+```conf
 {% raw %}$ kc logs -n kube-system po/kube-proxy-x7qgq
 E0805 09:46:12.625751       1 ipset.go:156] Failed to make sure ip set: &{{KUBE-CLUSTER-IP hash:ip,port inet 1024 65536 0-65535 Kubernetes service cluster ip + port for masquerade purpose} map[] 0xc420562080} exist, error: error creating ipset KUBE-CLUSTER-IP, error: exit status 1
 E0805 09:46:42.645604       1 ipset.go:156] Failed to make sure ip set: &{{KUBE-LOAD-BALANCER-FW hash:ip,port inet 1024 65536 0-65535 Kubernetes service load balancer ip + port for load balancer with sourceRange} map[] 0xc420562080} exist, error: error creating ipset KUBE-LOAD-BALANCER-FW, error: exit status 1
@@ -77,13 +77,33 @@ Note, that you'll need docker for this to succeed, as everything is being
 done inside a container (who needs a shitload of build dependencies on
 their laptop?). Performing this steps on MacOS produced a strange error:
 
-```
-logs are lost :(
+```conf
+--- snip ---
+echo 'csu/init-first.o csu/libc-start.o csu/sysdep.o csu/version.o csu/check_fds.o csu/libc-tls.o csu/elf-init.o csu/dso_handle.o csu/errno.o csu/errno-loc.o' > /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oT
+mv -f /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oT /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.o
+echo 'csu/init-first.os csu/libc-start.os csu/sysdep.os csu/version.os csu/check_fds.os csu/dso_handle.os csu/unwind-resume.os csu/errno.os csu/errno-loc.os' > /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.osT
+echo 'csu/elf-init.oS' > /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oST
+mv -f /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.osT /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.os
+mv -f /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oST /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oS
+/mnt/out/buildroot/output/host/bin/x86_64-minikube-linux-gnu-gcc -nostdlib -nostartfiles -r -o /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/crt1.o /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/start.o /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/abi-note.o /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/init.o /mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/static-reloc.o
+mv: cannot move '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oST' to '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oS': No such file or directory
+../o-iterator.mk:9: recipe for target '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oS' failed
+make[5]: *** [/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build/csu/stamp.oS] Error 1
+make[5]: *** Waiting for unfinished jobs....
+make[5]: Leaving directory '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/csu'
+Makefile:215: recipe for target 'csu/subdir_lib' failed
+make[4]: *** [csu/subdir_lib] Error 2
+make[4]: Leaving directory '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e'
+Makefile:9: recipe for target 'all' failed
+make[3]: *** [all] Error 2
+make[3]: Leaving directory '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/build'
+package/pkg-generic.mk:223: recipe for target '/mnt/out/buildroot/output/build/glibc-glibc-2.27-57-g6c99e37f6fb640a50a3113b2dbee5d5389843c1e/.stamp_built' failed
+--- snip ---
 ```
 
 At first, these messages doesn't make sense - `make` is unable to move the file
 it created a few commands ago. But if you consider previous similar command, it
-clicks: Apple uses case-insensitive FS by default! Minus 5 points to those who
+clicks: Apple uses case-insensitive FS by default! Minus 10 points to those who
 came up with the idea of using case-differing file extensions for build process,
 though. To overcome this obstacle, I've adopted the trick from [one poor soul
 trying to build a cross-compilation toolchain for RPi 3][hdutil_trick] - use a
@@ -147,7 +167,7 @@ $ minikube start --iso-url=file://$PWD/out/minikube.iso
 After cluster starts up, repeat the steps we've done to switch to IPVS in
 kube-proxy and voilà:
 
-```
+```conf
 I0811 21:26:07.996804       1 feature_gate.go:230] feature gates: &{map[]}
 I0811 21:26:08.064640       1 server_others.go:183] Using ipvs Proxier.
 W0811 21:26:08.086817       1 proxier.go:349] clusterCIDR not specified, unable to distinguish between internal and external traffic
