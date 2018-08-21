@@ -145,7 +145,7 @@ $ minikube start --iso-url=file://$PWD/out/minikube.iso
 ```
 
 After cluster starts up, repeat the steps we've done to switch to IPVS in
-kube-proxy and voila:
+kube-proxy and voilà:
 
 ```
 I0811 21:26:07.996804       1 feature_gate.go:230] feature gates: &{map[]}
@@ -231,11 +231,7 @@ NAME           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 hello-server   ClusterIP   10.104.236.6   <none>        80/TCP    37m
 kubernetes     ClusterIP   10.96.0.1      <none>        443/TCP   3h
 $ ab -c 10 -n 100 "http://10.104.236.6/ip"
-```
 
-Let's check the stats:
-
-```bash
 [root@minikube ~]# ipvsadm -ln
 IP Virtual Server version 1.2.1 (size=4096)
 Prot LocalAddress:Port Scheduler Flags
@@ -259,10 +255,11 @@ brittle scenario:
 ```bash
 $ kc scale deployment hello-server --replicas 1
 $ # Wait till the second pod dies
-$ (ab -c 10 -n 10 "http://10.104.236.6:80/delay/10" &) && \
+$ (ab -c 10 -n 10 "http://10.104.236.6/delay/10" &) && \
       kc scale deployment hello-server --replicas 2 && \
       sleep 8 && \
       ab -c 10 -n 100 "http://10.104.236.6/ip"
+
 [root@minikube ~]# ipvsadm -ln
 IP Virtual Server version 1.2.1 (size=4096)
 Prot LocalAddress:Port Scheduler Flags
