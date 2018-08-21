@@ -97,9 +97,9 @@ $ make out/minikube.iso
 ```
 
 > You need to be careful here, though - depending on how your docker file sharing
-> set up, you may need to ssh into the VM and ensure that correct volume is
-> mounted at `out`. If it NFS, for example, you'll need to add a line in
-> `/etc/exports`, restart nfsd, and explicitly mount that dir.
+> is set up, you may need to ssh into the VM and ensure that correct volume is
+> mounted at `out`. If it's NFS, for example, you'll need to add a line in
+> `/etc/exports`, restart nfsd, and explicitly mount that dir inside a VM.
 
 Once the build finishes, we need to tweak the Linux kernel configuration to
 include ipset modules. Minikube's custom ISO documentation says it can be done
@@ -220,7 +220,7 @@ and UDP. As you can see, IPVS scheduler for all the virtual services is `rr`.
 ## Trying it out, for real
 
 First, I'd like to check the default scheduler. We'll spin up an http server
-and bench it with `ab`.
+and bench it with [ab][ab].
 
 ```bash
 $ kc run hello-server --image kennethreitz/httpbin --port 80 --replicas 2
@@ -246,10 +246,10 @@ TCP  10.104.236.6:80 rr
   -> 172.17.0.6:80                Masq    1      0          50
 ```
 
-As expected, requests have landed 50/50 on both pods. Now we'll change the
+As expected, requests have landed 50/50 on both pods. Next we'll change the
 scheduler to `lc`. To do this, edit the configmap once again and delete
-kube-proxy's pod. Then we need to simulate an uneven load. I came up with
-this brittle scenario:
+kube-proxy's pod. Then, to simulate an uneven load, I've came up with this
+brittle scenario:
 
 * scale the deployment to a single pod
 * start a bunch of long requests
@@ -283,3 +283,4 @@ SUCCESS 🎉🎉🎉
   [minikube_iso_doc]: https://github.com/kubernetes/minikube/blob/master/docs/contributors/minikube_iso.md#build-instructions
   [hdutil_trick]: https://www.jwz.org/blog/2016/11/buildroot/
   [toolbox]: https://github.com/coreos/toolbox
+  [ab]: https://httpd.apache.org/docs/current/programs/ab.html
