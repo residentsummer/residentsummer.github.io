@@ -64,3 +64,9 @@ exclude:
   - theme-license.md
   - Gemfile.lock
   - vendor
+
+defaults:
+  - scope:
+      path: "/about/*"
+    values:
+      sitemap: false
